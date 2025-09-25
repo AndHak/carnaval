@@ -168,8 +168,8 @@ const Features = () => {
           <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
             <BentoCard
               src="videos/feature-4.mp4"
-              title={<><b>az</b>ul</>}
-              description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+              title={<>3 <b>de</b> enero</>}
+              description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa."
               isComingSoon
             />
           </BentoTilt>
