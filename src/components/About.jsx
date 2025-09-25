@@ -30,19 +30,26 @@ const About = () => {
     <div id="about" className="min-h-screen w-screen">
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
         <p className="font-general text-sm uppercase md:text-[10px]">
-          Bienvenido a Plan B(its)
+          Propuesta por Plan B(its)
         </p>
 
         <AnimatedTitle
-          title="Frase Inspira<b>o</b>ra acerca <br />carnaval de p<b>a</b>sto"
+          title="Protege el carnaval carnaval de p<b>a</b>sto"
           containerClass="mt-5 !text-black text-center"
         />
 
         <div className="about-subtext">
-          <p>El carnaval de blancos y negros es patrimonio cultural</p>
-          <p className="text-gray-500">
-            Esta es la propuesta al desrrollo sostenible, apoyanos con lo que puedas
-          </p>
+           <p className=" mt-3">
+        Nuestra propuesta impulsa un <span className="font-bold">carnaval sostenible</span>, donde cada carroza,
+        cada comparsa y cada sonrisa aporten al cuidado del medio ambiente. 
+        Queremos reducir los desechos, promover el reciclaje creativo y rescatar
+        la esencia cultural que nos hace únicos.
+      </p>
+
+      <p className="text-gray-500 mt-3 italic">
+        Únete a este movimiento y demuestra que celebrar también es cuidar.  
+        ¡Apóyanos con tus ideas, tu energía o tus recursos!
+      </p>
         </div>
       </div>
 

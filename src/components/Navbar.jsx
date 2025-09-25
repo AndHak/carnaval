@@ -2,28 +2,28 @@ import clsx from "clsx";
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 
-const navItems = ["Inicio", "Opcional", "Mapa", "Apoyanos", "Contacto"];
+const navItems = ["Inicio", "Educacion", "Mapa", "Apoyanos", "Contacto"];
 
 const NavBar = () => {
-
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const audioElementRef = useRef(null);
   const navContainerRef = useRef(null);
+  const sidebarRef = useRef(null);
 
   const { y: currentScrollY } = useWindowScroll();
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Toggle audio and visual indicator
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
     setIsIndicatorActive((prev) => !prev);
   };
 
-  // Manage audio playback
   useEffect(() => {
     if (isAudioPlaying) {
       audioElementRef.current.play();
@@ -34,19 +34,15 @@ const NavBar = () => {
 
   useEffect(() => {
     if (currentScrollY === 0) {
-      // Topmost position: show navbar without floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
-      // Scrolling down: hide navbar and apply floating-nav
       setIsNavVisible(false);
       navContainerRef.current.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
-      // Scrolling up: show navbar with floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.add("floating-nav");
     }
-
     setLastScrollY(currentScrollY);
   }, [currentScrollY, lastScrollY]);
 
@@ -58,6 +54,17 @@ const NavBar = () => {
     });
   }, [isNavVisible]);
 
+  // Animación del sidebar
+  useEffect(() => {
+    if (sidebarRef.current) {
+      gsap.to(sidebarRef.current, {
+        x: isMenuOpen ? 0 : "100%",
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    }
+  }, [isMenuOpen]);
+
   return (
     <div
       ref={navContainerRef}
@@ -65,29 +72,26 @@ const NavBar = () => {
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2 bg-black/70">
         <nav className="flex size-full items-center justify-between p-4">
-          {/* Logo and Product button */}
+          {/* Logo */}
           <div className="flex items-center gap-7">
             <img src="/img/logo.jpg" alt="logo" className="w-10" />
             <span className="text-white font-bold scale-[1.3]">Plan B(its)</span>
           </div>
 
-          {/* Navigation Links and Audio Button */}
-          <div className="flex h-full items-center">
-            <div className="hidden md:block">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-
+          {/* Links Desktop */}
+          <div className="hidden md:flex h-full items-center">
+            {navItems.map((item, index) => (
+              <a
+                key={index}
+                href={`#${item.toLowerCase()}`}
+                className="nav-hover-btn"
+              >
+                {item}
+              </a>
+            ))}
             <button
               onClick={toggleAudioIndicator}
-              className="ml-10 flex items-center space-x-0.5"
+              className="ml-10 flex items-center space-x-0.5 mr-2"
             >
               <audio
                 ref={audioElementRef}
@@ -108,8 +112,65 @@ const NavBar = () => {
               ))}
             </button>
           </div>
+
+          {/* Botón Hamburger (Mobile) */}
+          <div className="md:hidden flex items-center">
+            <button onClick={() => setIsMenuOpen(true)}>
+              <HiMenu className="text-white w-7 h-7" />
+            </button>
+          </div>
         </nav>
       </header>
+
+      {/* Sidebar Mobile */}
+      <div
+        ref={sidebarRef}
+        className="fixed top-0 right-0 h-screen w-64 bg-black/90 text-white p-6 transform translate-x-full z-50 flex flex-col"
+      >
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="self-end mb-8"
+        >
+          <HiX className="w-7 h-7" />
+        </button>
+        {navItems.map((item, index) => (
+          <a
+            key={index}
+            href={`#${item.toLowerCase()}`}
+            onClick={() => setIsMenuOpen(false)}
+            className="mb-4 text-lg hover:text-yellow-400"
+          >
+            {item}
+          </a>
+        ))}
+
+        <button
+          onClick={toggleAudioIndicator}
+          className="mt-4 flex items-center space-x-0.5"
+        >
+          <audio
+            ref={audioElementRef}
+            className="hidden"
+            src="/audio/loop.mp3"
+            loop
+          />
+          <div className="flex h-full w-full gap-1">
+          {[1, 2, 3, 4].map((bar) => (
+            <div
+              key={bar}
+              className={clsx("indicator-line mt-2", {
+                active: isIndicatorActive,
+              })}
+              style={{
+                animationDelay: `${bar * 0.1}s`,
+              }}
+            />
+          ))}
+          <span className="ml-2.5">Play</span>
+          </div>
+
+        </button>
+      </div>
     </div>
   );
 };

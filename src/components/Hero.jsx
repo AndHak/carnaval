@@ -1,8 +1,8 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import { TiLocationArrow } from "react-icons/ti";
 import { useEffect, useRef, useState } from "react";
+import { Gamepad2 } from 'lucide-react';
 
 import Button from "./Button";
 import VideoPreview from "./VideoPreview";
@@ -147,26 +147,30 @@ const Hero = () => {
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="special-font hero-heading text-yellow-400/80">
-              CAR<b>n</b>AVAL
+              Ec<b>o</b>Car<b>n</b>aval
             </h1>
 
-            <p className="mb-5 max-w-64 size text-sky-500 font-robert-medium">
-              Apoyo al desarrollo sotenible <br /> Apoyo al patrimonio cultural de la humanidad
+            <p className="mb-5 max-w-[14rem] size text-sky-500 font-robert-medium md:max-w-[30%]">
+              Una guía interactiva que une tradición y sostenibilidad: localiza puntos de reciclaje en tiempo real y recibe recomendaciones con inteligencia artificial para un Carnaval más limpio y consciente.
             </p>
 
-            <Button
-              id="watch-trailer"
-              title="Dar un recorrido"
-              leftIcon={<TiLocationArrow />}
-              containerClass="!bg-red-400 flex-center gap-1"
-            />
           </div>
         </div>
       </div>
 
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
+        
+
+
+      <div className="special-font hero-heading absolute bottom-5 right-5 text-black">
+                <Button
+          id="watch-trailer"
+          title="Juguemos juntos"
+          leftIcon={ <Gamepad2/> }
+          containerClass="!bg-red-400 flex-center gap-3 absolute hero-heading !right-2 md:w-64"
+        />
         P<b>A</b>STO
-      </h1>
+      </div>
+
     </div>
   );
 };
