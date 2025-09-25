@@ -4,7 +4,7 @@ import NavBar from "./components/Navbar";
 import Features from "./components/Features";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Map from "./components/map";
+import Mapa from "./components/Mapa";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <NavBar />
       <Hero />
       <About />
-      <Map/>
+      <Mapa/>
       <Features />
       <Contact />
       <Footer />
