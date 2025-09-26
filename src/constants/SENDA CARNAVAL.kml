@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>SENDA CARNAVAL</name>
+    <description>Senda del Carnaval de Negros y Blancos 2025</description>
+    <NetworkLink>
+      <name>SENDA CARNAVAL</name>
+      <Link>
+        <href><![CDATA[https://www.google.com/maps/d/kml?forcekml=1&mid=1akYu6Xil2sWktVpvJT7Ub1lFPxbouPA]]></href>
+      </Link>
+    </NetworkLink>
+  </Document>
+</kml>

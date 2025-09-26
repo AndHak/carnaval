@@ -66,7 +66,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black/90 px-5 py-3 text-xs uppercase text-white/90"
+            className="relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black/90 px-5 py-3 text-xs uppercase text-black/90"
           >
             <div
               className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
@@ -144,7 +144,7 @@ const Features = () => {
           
 
           {/* Reciclar */}
-          <BentoTilt className="bento-tilt_2 bg-green-500 p-5 flex flex-col justify-between text-white">
+          <BentoTilt className="bento-tilt_2 bg-green-500 p-5 flex flex-col justify-between text-black">
             <h1 className="text-2xl font-bold">Reciclar</h1>
             <p className="mt-3 text-sm md:text-base">
               Durante el carnaval, separar residuos como botellas y cartones
@@ -154,7 +154,7 @@ const Features = () => {
           </BentoTilt>
 
           {/* Reutilizar */}
-          <BentoTilt className="bento-tilt_2 bg-blue-500 p-5 flex flex-col justify-between text-white">
+          <BentoTilt className="bento-tilt_2 bg-blue-500 p-5 flex flex-col justify-between text-black">
             <h1 className="text-2xl font-bold">Reutilizar</h1>
             <p className="mt-3 text-sm md:text-base">
               Usa vasos, platos o disfraces que ya tengas de años anteriores,
@@ -163,7 +163,7 @@ const Features = () => {
           </BentoTilt>
 
           {/* Reusar */}
-          <BentoTilt className="bento-tilt_2 bg-purple-500 p-5 flex flex-col justify-between text-white">
+          <BentoTilt className="bento-tilt_2 bg-purple-500 p-5 flex flex-col justify-between text-black">
             <h1 className="text-2xl font-bold">Reusar</h1>
             <p className="mt-3 text-sm md:text-base">
               Convierte materiales del carnaval pasado en decoraciones nuevas,
@@ -172,9 +172,9 @@ const Features = () => {
           </BentoTilt>
 
           {/* Reducir */}
-          <BentoTilt className="bento-tilt_2 bg-red-500 p-5 flex flex-col justify-between text-white">
+          <BentoTilt className="bento-tilte bg-red-500 p-5 flex flex-col justify-between text-black">
             <h1 className="text-2xl font-bold">Reducir</h1>
-            <p className="mt-3 text-sm md:text-base">
+            <p className="bento-title max-w-96 !justify-center text-center mx-auto text-black text-xl font-bold items-center my-auto">
               Trae tu propia botella de agua y bolsas reutilizables. Así
               contribuimos a generar menos basura en las calles.
             </p>
@@ -184,7 +184,7 @@ const Features = () => {
               <h2 className="text-sm font-semibold text-black mb-10 mx-auto my-auto text-center md:text-2xl font-general">
                 Tiempo restante para el carnaval
               </h2>
-              <h1 className="bento-title max-w-96 !justify-center text-center mx-auto text-black text-xl font-bold items-center my-auto">
+              <h1 className="bento-title max-w-96 !justify-center text-center mx-auto text-black text-md font-bold items-center my-auto">
                 {timeLeft.days} Días <br />
                 {timeLeft.hours} Horas <br />
                 {timeLeft.minutes} Minutos <br />

@@ -12,8 +12,8 @@ const About = () => {
       scrollTrigger: {
         trigger: "#clip",
         start: "center center",
-        end: "+=1000 center",
-        scrub: 2,
+        end: "+=500 center",
+        scrub: 0.5,
         pin: true,
         pinSpacing: true,
         className: "mb-2"
@@ -40,7 +40,7 @@ const About = () => {
         />
 
         <div className="about-subtext">
-           <p className=" mt-auto">
+           <p className="">
         Nuestra propuesta impulsa un <span className="font-bold">carnaval sostenible</span>, donde cada carroza,
         cada comparsa y cada sonrisa aporten al cuidado del medio ambiente. 
         Queremos reducir los desechos, promover el reciclaje creativo y rescatar

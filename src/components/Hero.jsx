@@ -106,6 +106,8 @@ const Hero = () => {
                                 onClick={handleMiniVdClick}
                                 className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
                             >
+
+                              
                                 <video
                                     ref={nextVdRef}
                                     src={getVideoSrc(
@@ -120,6 +122,8 @@ const Hero = () => {
                             </div>
                         </VideoPreview>
                     </div>
+
+                    <div className="absolute inset-0 z-30"></div>
 
                     <video
                         ref={nextVdRef}
@@ -148,11 +152,11 @@ const Hero = () => {
 
                 <div className="absolute left-0 top-0 z-40 size-full">
                     <div className="mt-24 px-5 sm:px-10">
-                        <h1 className="special-font hero-heading text-yellow-400/80">
+                        <h1 className="special-font hero-heading text-yellow-400">
                             Ec<b>o</b>Car<b>n</b>aval
                         </h1>
 
-                        <p className="mb-5 max-w-[14rem] size text-sky-500 font-robert-medium md:max-w-[30%]">
+                        <p className="mb-5 bg-black/40 max-w-[14rem] size text-blue-300 p-2 font-robert-medium md:max-w-[30%] text-pretty text-md">
                             Una guía interactiva que une tradición y
                             sostenibilidad: localiza puntos de reciclaje en
                             tiempo real y recibe recomendaciones con

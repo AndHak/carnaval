@@ -6,13 +6,20 @@ const Mapa = () => {
   const center = [1.2123, -77.2802];
   const navigate = useNavigate();
 
+  const customIcon = L.icon({
+  iconUrl: "/img/reciclaje.png", // Ruta a tu imagen
+  iconSize: [170, 250], 
+  iconAnchor: [85, 125], 
+  popupAnchor: [0, -32], 
+});
+
   return (
     <div
-      className="w-full h-[900px] p-6 bg-green-400 shadow-2xl cursor-pointer justify-center items-center"
+      className="w-full md:h-[900px] h-[400px] p-6 bg-green-400 shadow-2xl cursor-pointer justify-center items-center"
       onClick={() => navigate("/puntosdereciclaje")} 
     >
         <h1 className="bento-title mt-4 mb-8 justify-center text-center">
-            Conocer nuestros puntos de reciclaje
+            Conoce nuestros puntos de reciclaje
         </h1>
       <MapContainer
         center={center}
@@ -31,7 +38,7 @@ const Mapa = () => {
           subdomains="abcd"
           maxZoom={15}
         />
-        <Marker position={center}>
+        <Marker position={center} icon={customIcon}>
           <Popup>Pasto Centro</Popup>
         </Marker>
       </MapContainer>
