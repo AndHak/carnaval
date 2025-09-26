@@ -5,6 +5,7 @@ import Features from ".././components/Features";
 import Contact from ".././components/Contact";
 import Footer from ".././components/Footer";
 import Mapa from ".././components/Mapa";
+import FloatingImage from "../components/Story";
 export const HomePage = () => {
     return (
         <main className="relative min-h-screen w-screen overflow-x-hidden">
@@ -13,6 +14,7 @@ export const HomePage = () => {
             <About />
             <Mapa />
             <Features />
+            <FloatingImage/>
             <Contact />
             <Footer />
         </main>

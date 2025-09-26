@@ -1,124 +1,125 @@
 import gsap from "gsap";
 import { useRef } from "react";
-
-import Button from "./Button";
 import AnimatedTitle from "./AnimatedTitle";
 
 const FloatingImage = () => {
-  const frameRef = useRef(null);
 
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    const element = frameRef.current;
-
-    if (!element) return;
-
-    const rect = element.getBoundingClientRect();
-    const xPos = clientX - rect.left;
-    const yPos = clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((yPos - centerY) / centerY) * -10;
-    const rotateY = ((xPos - centerX) / centerX) * 10;
-
-    gsap.to(element, {
-      duration: 0.3,
-      rotateX,
-      rotateY,
-      transformPerspective: 500,
-      ease: "power1.inOut",
-    });
-  };
-
-  const handleMouseLeave = () => {
-    const element = frameRef.current;
-
-    if (element) {
-      gsap.to(element, {
-        duration: 0.3,
-        rotateX: 0,
-        rotateY: 0,
-        ease: "power1.inOut",
-      });
-    }
-  };
-
-  return (
-    <div id="story" className="min-h-dvh w-screen bg-black text-blue-50">
-      <div className="flex size-full flex-col items-center py-10 pb-24">
-        <p className="font-general text-sm uppercase md:text-[10px]">
-          the multiversal ip world
-        </p>
-
-        <div className="relative size-full">
-          <AnimatedTitle
-            title="the st<b>o</b>ry of <br /> a hidden real<b>m</b>"
-            containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
-          />
-
-          <div className="story-img-container">
-            <div className="story-img-mask">
-              <div className="story-img-content">
-                <img
-                  ref={frameRef}
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
-                  onMouseUp={handleMouseLeave}
-                  onMouseEnter={handleMouseLeave}
-                  src="/img/entrance.webp"
-                  alt="entrance.webp"
-                  className="object-contain"
-                />
-              </div>
-            </div>
-
-            {/* for the rounded corner */}
-            <svg
-              className="invisible absolute size-0"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <filter id="flt_tag">
-                  <feGaussianBlur
-                    in="SourceGraphic"
-                    stdDeviation="8"
-                    result="blur"
-                  />
-                  <feColorMatrix
-                    in="blur"
-                    mode="matrix"
-                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                    result="flt_tag"
-                  />
-                  <feComposite
-                    in="SourceGraphic"
-                    in2="flt_tag"
-                    operator="atop"
-                  />
-                </filter>
-              </defs>
-            </svg>
-          </div>
-        </div>
-
-        <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
-          <div className="flex h-full w-fit flex-col items-center md:items-start">
-            <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
-              Propuesta de desrrollo o mapa.
+    return (
+        <div
+            id="canjea"
+            className="min-h-dvh w-screen bg-black text-blue-50 flex flex-col items-center justify-center px-4"
+        >
+            {/* Título */}
+            <p className="font-general text-sm uppercase md:text-[10px] text-center">
+                Proximamente
             </p>
 
-            <Button
-              id="realm-btn"
-              title="Abrir Navegacion"
-              containerClass="mt-5"
-            />
-          </div>
+            <div className="relative size-full flex justify-center mx-auto">
+                <AnimatedTitle
+                    title="Canjea t<b>u</b>s puntos<br />aq<b>u</b>i"
+                    containerClass="mt-5 text-center pointer-events-none mix-blend-difference relative z-10"
+                />
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 justify-items-center max-w-lg w-full mx-auto">
+                {/* Card 1 */}
+                <div className="relative aspect-square w-28 sm:w-40 md:w-48 lg:w-56 rounded-xl bg-slate-800 overflow-hidden flex items-center justify-center hover:scale-105 transition-all duration-200">
+                    <img
+                        src="/img/reward1.jpg"
+                        alt="reward1"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 w-full bg-black/60 text-white text-xs sm:text-sm md:text-base px-2 py-1 text-center">
+                        <p>Carioca</p>
+                        <span className="text-violet-400 font-semibold">
+                            200 pts
+                        </span>
+                    </div>
+                </div>
+
+                {/* Card 2 */}
+                <div className="relative aspect-square w-28 sm:w-40 md:w-48 lg:w-56 rounded-xl bg-slate-800 overflow-hidden flex items-center justify-center hover:scale-105 transition-all duration-200">
+                    <img
+                        src="/img/reward2.png"
+                        alt="reward2"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 w-full bg-black/60 text-white text-xs sm:text-sm md:text-base px-2 py-1 text-center">
+                        <p>Cilindro de gas</p>
+                        <span className="text-violet-400 font-semibold">
+                            2000 pts
+                        </span>
+                    </div>
+                </div>
+
+                {/* Card 3 */}
+                <div className="relative aspect-square w-28 sm:w-40 md:w-48 lg:w-56 rounded-xl bg-slate-800 overflow-hidden flex items-center justify-center hover:scale-105 transition-all duration-200">
+                    <img
+                        src="/img/reward3.jpg"
+                        alt="reward3"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 w-full bg-black/60 text-white text-xs sm:text-sm md:text-base px-2 py-1 text-center">
+                        <p>Entradas vip estadio</p>
+                        <span className="text-violet-400 font-semibold">
+                            1000 pts
+                        </span>
+                    </div>
+                </div>
+
+                {/* Card 4 */}
+                <div className="relative aspect-square w-28 sm:w-40 md:w-48 lg:w-56 rounded-xl bg-slate-800 overflow-hidden flex items-center justify-center hover:scale-105 transition-all duration-200">
+                    <img
+                        src="/img/reward4.png"
+                        alt="reward4"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 w-full bg-black/60 text-white text-xs sm:text-sm md:text-base px-2 py-1 text-center">
+                        <p>Poncho</p>
+                        <span className="text-violet-400 font-semibold">
+                            500 pts
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            {/* Sección estilo chatbot */}
+            <div className="mt-10 flex justify-center w-full">
+                <div className="flex h-full w-fit flex-col items-center">
+                    {/* Caja del chat (mock) */}
+                    <div className="w-[300px] max-w-sm rounded-2xl bg-slate-900/70 p-4 shadow-lg">
+                        <div className="flex flex-col gap-3 text-sm text-blue-50">
+                            <div className="self-start rounded-xl bg-slate-800 px-3 py-2">
+                                Hola ingresa tu usuario para ver tus puntos.
+                            </div>
+                            <div className="self-end rounded-xl bg-violet-700 px-3 py-2">
+                                Usuario123
+                            </div>
+                            <div className="self-start rounded-xl bg-slate-800 px-3 py-2">
+                                Tienes <strong>120 puntos</strong>
+                            </div>
+                            <div className="self-start rounded-xl bg-slate-800 px-3 py-2 text-xs italic text-gray-300">
+                                Más funciones en camino...
+                            </div>
+                        </div>
+
+                        {/* Input simulado */}
+                        <div className="my-4 flex items-center gap-2">
+                            <input
+                                type="text"
+                                placeholder="Escribe tu usuario..."
+                                className="flex-1 rounded-lg bg-slate-800 px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none"
+                                disabled
+                            />
+                            <button className="rounded-lg bg-violet-700 px-3 py-2 text-sm font-semibold text-white opacity-50 cursor-not-allowed">
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default FloatingImage;

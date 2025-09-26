@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, GeoJSON, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import NavBar from "./Navbar";
 import { Navigation } from "lucide-react";
-import { geojson as rutasGeoJson } from "../constants/rutas";
+import { geojson as puntosGeoJson } from "../constants/puntosReciclaje";
 
 const FitBounds = ({ layerRef }) => {
     const map = useMap();
@@ -19,29 +19,46 @@ const FitBounds = ({ layerRef }) => {
     return null;
 };
 
-const makeIcon = (url) => {
-    if (!url) return null;
+
+const makeIcon = (url, options = {}) => {
     return L.icon({
         iconUrl: url,
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
-        popupAnchor: [0, -32],
+        iconSize: options.iconSize || [40, 50], // tamaño por defecto
+        iconAnchor: options.iconAnchor || [16, 32],
+        popupAnchor: options.popupAnchor || [0, -32],
     });
 };
 
+
 const pointToLayer = (feature, latlng) => {
+    const props = feature?.properties ?? {};
+    if (props.name === "recycling_point") {
+        return pointTrashToLayer(feature, latlng);
+    }
+
     const iconUrl = "img/indicador_bueno.png";
-    if (iconUrl) return L.marker(latlng, { icon: makeIcon(iconUrl) });
-    return L.circleMarker(latlng, { radius: 6, weight: 1, fillOpacity: 0.9 });
+    return L.marker(latlng, {
+        icon: makeIcon(iconUrl, { iconSize: [32, 32], iconAnchor: [16, 32] }),
+    });
 };
 
+const pointTrashToLayer = (feature, latlng) => {
+    const iconTrash = "img/reciclaje.png";
+    return L.marker(latlng, {
+        icon: makeIcon(iconTrash, { iconSize: [50, 60], iconAnchor: [25, 60] }),
+    });
+};
 const onEachFeature = (feature, layer) => {
     const props = feature?.properties ?? {};
     let desc = "";
-    if (props.description) {
+
+    if (props.name === "recycling_point") {
+        desc = "Punto de reciclaje ♻️";
+    } else if (props.description) {
         if (typeof props.description === "string") desc = props.description;
         else if (props.description?.value) desc = props.description.value;
     }
+
     const html = `<strong>${props.name || ""}</strong><br/>${desc}`;
     layer.bindPopup(html);
 };
@@ -97,9 +114,10 @@ const LocateButton = () => {
     );
 };
 
-const MapaInteractivo = ({ data = rutasGeoJson }) => {
+const MapaInteractivo = ({ data = puntosGeoJson }) => {
     const center = [1.2123, -77.2802];
     const layerRef = useRef(null);
+    const layer2Ref = useRef(null)
     const features = data?.features ?? [];
 
     return (

@@ -1,4 +1,4 @@
-export const puntosReciclaje = {
+export const geojson = {
     type: "FeatureCollection",
     features: [
         {
