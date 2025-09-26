@@ -15,7 +15,7 @@ const Mapa = () => {
 
   return (
     <div
-      className="w-full md:h-[900px] h-[400px] p-6 bg-green-400 shadow-2xl cursor-pointer justify-center items-center"
+      className="w-full md:h-[900px] h-[500px] sm:mt-10 p-6 bg-green-400 shadow-2xl cursor-pointer justify-center items-center"
       onClick={() => navigate("/puntosdereciclaje")} 
     >
         <h1 className="bento-title mt-4 mb-8 sm:mt-20 justify-center text-center">
