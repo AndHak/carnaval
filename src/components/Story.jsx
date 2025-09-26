@@ -90,13 +90,13 @@ const FloatingImage = () => {
                     <div className="w-[300px] max-w-sm rounded-2xl bg-slate-900/70 p-4 shadow-lg">
                         <div className="flex flex-col gap-3 text-sm text-blue-50">
                             <div className="self-start rounded-xl bg-slate-800 px-3 py-2">
-                                Hola ingresa tu usuario para ver tus puntos.
+                                Hola ingresa tu identificacion para ver tus puntos.
                             </div>
                             <div className="self-end rounded-xl bg-violet-700 px-3 py-2">
-                                Usuario123
+                                1000111111
                             </div>
                             <div className="self-start rounded-xl bg-slate-800 px-3 py-2">
-                                Tienes <strong>120 puntos</strong>
+                                Juanito perez tienes <strong>120 puntos</strong>
                             </div>
                             <div className="self-start rounded-xl bg-slate-800 px-3 py-2 text-xs italic text-gray-300">
                                 Más funciones en camino...
