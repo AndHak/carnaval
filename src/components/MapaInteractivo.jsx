@@ -23,7 +23,7 @@ const FitBounds = ({ layerRef }) => {
 const makeIcon = (url, options = {}) => {
     return L.icon({
         iconUrl: url,
-        iconSize: options.iconSize || [40, 50], // tamaño por defecto
+        iconSize: options.iconSize || [40, 50], 
         iconAnchor: options.iconAnchor || [16, 32],
         popupAnchor: options.popupAnchor || [0, -32],
     });

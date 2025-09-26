@@ -1,4 +1,4 @@
-import Mapa from "../components/Mapa"
+
 import MapaInteractivo from "../components/MapaInteractivo"
 
 export const MapPage = () => {

@@ -1,5 +1,4 @@
-import gsap from "gsap";
-import { useRef } from "react";
+
 import AnimatedTitle from "./AnimatedTitle";
 
 const FloatingImage = () => {

@@ -9,13 +9,13 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="w-screen bg-[#5542ff] py-4 text-black">
+    <footer className="w-screen bg-[#5542ff] py-4 text-black" id="contacto">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
         <p className="text-center text-sm font-light md:text-left">
           ©Plan B(its) 2025
         </p>
 
-        <div className="flex justify-center gap-4  md:justify-start">
+        <div className="flex justify-center gap-4 md:justify-start">
           {socialLinks.map((link, index) => (
             <a
               key={index}
@@ -27,6 +27,15 @@ const Footer = () => {
               {link.icon}
             </a>
           ))}
+                  {/* Info de contacto */}
+        <div className="text-center text-sm font-light md:text-right flex">
+          <p>
+            <a href="mailto:contacto@planbits.com" className="hover:underline">
+              planbits@gmail.com
+            </a>
+          </p>
+          <p>+57 300 000 0000</p>
+        </div>
         </div>
 
         <a
