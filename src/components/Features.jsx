@@ -145,8 +145,8 @@ const Features = () => {
 
           {/* Reciclar */}
           <BentoTilt className="bento-tilt_2 bg-green-500 p-5 flex flex-col justify-between text-black">
-            <h1 className="text-2xl font-bold">Reciclar</h1>
-            <p className="mt-3 text-sm md:text-base">
+            <h1 className="text-2xl font-bold bento-title">Reciclar</h1>
+            <p className="max-w-96 !justify-center text-center mx-auto text-black font-bold items-center my-auto text-2xl">
               Durante el carnaval, separar residuos como botellas y cartones
               ayuda a que puedan tener una nueva vida y no terminen en el río
               Pasto.
@@ -155,8 +155,8 @@ const Features = () => {
 
           {/* Reutilizar */}
           <BentoTilt className="bento-tilt_2 bg-blue-500 p-5 flex flex-col justify-between text-black">
-            <h1 className="text-2xl font-bold">Reutilizar</h1>
-            <p className="mt-3 text-sm md:text-base">
+            <h1 className="text-2xl font-bold bento-title">Reutilizar</h1>
+            <p className="max-w-96 !justify-center text-center mx-auto text-black font-bold items-center my-auto text-2xl">
               Usa vasos, platos o disfraces que ya tengas de años anteriores,
               evitando comprar cosas de un solo uso.
             </p>
@@ -164,8 +164,8 @@ const Features = () => {
 
           {/* Reusar */}
           <BentoTilt className="bento-tilt_2 bg-purple-500 p-5 flex flex-col justify-between text-black">
-            <h1 className="text-2xl font-bold">Reusar</h1>
-            <p className="mt-3 text-sm md:text-base">
+            <h1 className="text-2xl font-bold bento-title">Reusar</h1>
+            <p className="max-w-96 !justify-center text-center mx-auto text-black font-bold items-center my-auto text-2xl">
               Convierte materiales del carnaval pasado en decoraciones nuevas,
               dándoles un segundo propósito creativo.
             </p>
@@ -173,8 +173,8 @@ const Features = () => {
 
           {/* Reducir */}
           <BentoTilt className="bento-tilte bg-red-500 p-5 flex flex-col justify-between text-black">
-            <h1 className="text-2xl font-bold">Reducir</h1>
-            <p className="bento-title max-w-96 !justify-center text-center mx-auto text-black text-xl font-bold items-center my-auto">
+            <h1 className="text-2xl font-bold bento-title">Reducir</h1>
+            <p className="max-w-96 !justify-center text-center mx-auto text-black font-bold items-center my-auto text-2xl">
               Trae tu propia botella de agua y bolsas reutilizables. Así
               contribuimos a generar menos basura en las calles.
             </p>

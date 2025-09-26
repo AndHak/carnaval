@@ -7,7 +7,7 @@ const Mapa = () => {
   const navigate = useNavigate();
 
   const customIcon = L.icon({
-  iconUrl: "/img/reciclaje.png", // Ruta a tu imagen
+  iconUrl: "/img/reciclaje.png",
   iconSize: [170, 250], 
   iconAnchor: [85, 125], 
   popupAnchor: [0, -32], 
