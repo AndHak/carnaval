@@ -52,13 +52,6 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 
   return (
     <div className="relative size-full">
-      <video
-        src={src}
-        loop
-        muted
-        autoPlay
-        className="absolute left-0 top-0 size-full object-cover object-center"
-      />
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
         <div>
           <h1 className="bento-title special-font">{title}</h1>
@@ -147,54 +140,58 @@ const Features = () => {
         </div>
 
         <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
-          <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
-            <BentoCard
-              src="videos/feature-2.mp4"
-              title={<><b>Car</b>naval</>}
-              description="Cualquier cosa del carnaval."
-              isComingSoon
-            />
+          {/* Tiempo restante */}
+          
+
+          {/* Reciclar */}
+          <BentoTilt className="bento-tilt_2 bg-green-500 p-5 flex flex-col justify-between text-white">
+            <h1 className="text-2xl font-bold">Reciclar</h1>
+            <p className="mt-3 text-sm md:text-base">
+              Durante el carnaval, separar residuos como botellas y cartones
+              ayuda a que puedan tener una nueva vida y no terminen en el río
+              Pasto.
+            </p>
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-            <BentoCard
-              src="videos/feature-3.mp4"
-              title={<><b>Car</b>naval</>}
-              description="Loreslsssssssssss."
-              isComingSoon
-            />
+          {/* Reutilizar */}
+          <BentoTilt className="bento-tilt_2 bg-blue-500 p-5 flex flex-col justify-between text-white">
+            <h1 className="text-2xl font-bold">Reutilizar</h1>
+            <p className="mt-3 text-sm md:text-base">
+              Usa vasos, platos o disfraces que ya tengas de años anteriores,
+              evitando comprar cosas de un solo uso.
+            </p>
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-            <BentoCard
-              src="videos/feature-4.mp4"
-              title={<>3 <b>de</b> enero</>}
-              description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa."
-              isComingSoon
-            />
+          {/* Reusar */}
+          <BentoTilt className="bento-tilt_2 bg-purple-500 p-5 flex flex-col justify-between text-white">
+            <h1 className="text-2xl font-bold">Reusar</h1>
+            <p className="mt-3 text-sm md:text-base">
+              Convierte materiales del carnaval pasado en decoraciones nuevas,
+              dándoles un segundo propósito creativo.
+            </p>
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_2">
-            <div className="flex size-full flex-col justify-between bg-yellow-300 p-5">
-              <h1 className="bento-title max-w-64 text-black text-2xl font-bold">
-                {timeLeft.days}  Días <br />
-                {timeLeft.hours}  Horas <br />
-                {timeLeft.minutes}  Minutos <br />
-                {timeLeft.seconds}  Segundos
+          {/* Reducir */}
+          <BentoTilt className="bento-tilt_2 bg-red-500 p-5 flex flex-col justify-between text-white">
+            <h1 className="text-2xl font-bold">Reducir</h1>
+            <p className="mt-3 text-sm md:text-base">
+              Trae tu propia botella de agua y bolsas reutilizables. Así
+              contribuimos a generar menos basura en las calles.
+            </p>
+          </BentoTilt>
+          <BentoTilt className="bento-tilt_2 bg-yellow-300 p-5 flex flex-col justify-centeer !col-span-2 items-center">
+            <div className="items-center w-full h-full">
+              <h2 className="text-sm font-semibold text-black mb-10 mx-auto my-auto text-center md:text-2xl font-general">
+                Tiempo restante para el carnaval
+              </h2>
+              <h1 className="bento-title max-w-96 !justify-center text-center mx-auto text-black text-xl font-bold items-center my-auto">
+                {timeLeft.days} Días <br />
+                {timeLeft.hours} Horas <br />
+                {timeLeft.minutes} Minutos <br />
+                {timeLeft.seconds} Segundos
               </h1>
-
-              <TiTime className="m-5 scale-[5] self-end" />
             </div>
-          </BentoTilt>
-
-          <BentoTilt className="bento-tilt_2">
-            <video
-              src="videos/feature-5.mp4"
-              loop
-              muted
-              autoPlay
-              className="size-full object-cover object-center"
-            />
+            <TiTime className="m-5 scale-[5] self-end text-black/70" />
           </BentoTilt>
         </div>
       </div>

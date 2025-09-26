@@ -125,7 +125,7 @@ const NavBar = () => {
       {/* Sidebar Mobile */}
       <div
         ref={sidebarRef}
-        className="fixed top-0 right-0 h-screen w-64 bg-black/90 text-white p-6 transform translate-x-full z-50 flex flex-col"
+        className="fixed top-0 right-0 h-screen w-64 bg-black/90 text-white p-6 transform translate-x-full z-50 flex flex-col md:hidden"
       >
         <button
           onClick={() => setIsMenuOpen(false)}
