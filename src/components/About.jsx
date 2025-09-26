@@ -35,7 +35,7 @@ const About = () => {
         </p>
 
         <AnimatedTitle
-          title="Protege el carnaval carnaval de p<b>a</b>sto"
+          title="Protege el carnaval de p<b>a</b>sto"
           containerClass="mt-5 !text-black text-center"
         />
 

@@ -6,7 +6,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { Route } from "lucide-react";
 import { useLocation } from "react-router-dom";
 
-const navItems = ["Inicio", "Educacion", "Mapa", "Apoyanos", "Contacto"];
+const navItems = ["Inicio", "Mapa", "Educacion", "Canjea", "Contacto"];
 
 const NavBar = () => {
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);

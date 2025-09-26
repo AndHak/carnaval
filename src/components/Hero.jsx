@@ -1,13 +1,13 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
 import { useEffect, useRef, useState } from "react";
 import { ArrowBigDown } from "lucide-react";
 
 import Button from "./Button";
 import VideoPreview from "./VideoPreview";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(1);
@@ -33,6 +33,14 @@ const Hero = () => {
         setHasClicked(true);
 
         setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
+    };
+
+    const scrollDown = () => {
+        gsap.to(window, {
+            duration: 1,
+            scrollTo: { y: window.scrollY + 1200 },
+            ease: "power2.inOut",
+        });
     };
 
     useGSAP(
@@ -148,33 +156,30 @@ const Hero = () => {
                     />
                 </div>
 
-                <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
+                <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-red-500">
                     P<b>A</b>STO
                 </h1>
 
                 <div className="absolute left-0 top-0 z-40 size-full">
                     <div className="mt-24 px-5 sm:px-10">
-                        <h1 className="special-font hero-heading text-yellow-400">
-                            Ec<b>o</b>Car<b>n</b>aval
+                        <h1 className="flex gap-0.5 special-font hero-heading text-yellow-500">
+                            <h1 className="text-emerald-500">Ec<b>o</b></h1>Car<b>n</b>aval
                         </h1>
 
-                        <p className="mb-5 bg-black/40 max-w-[14rem] size text-blue-300 p-2 font-robert-medium md:max-w-[30%] text-pretty text-md">
-                            Una guía interactiva que une tradición y
-                            sostenibilidad: localiza puntos de reciclaje en
-                            tiempo real y recibe recomendaciones con
-                            inteligencia artificial para un Carnaval más limpio
-                            y consciente.
+                        <p className="mb-5 bg-black/40 max-w-[14rem] size text-white p-2 font-robert-medium md:max-w-[30%] text-pretty text-md">
+                            Celebremos la cultura y la alegría de Pasto con un carnaval que respeta el medio ambiente y transforma el futuro.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div className="special-font hero-heading absolute bottom-5 right-5 text-black">
+            <div className="special-font hero-heading absolute bottom-5 right-5 text-blue-700">
                 <Button
                     id="watch-trailer"
-                    title="Reciclemos juntos"
+                    title="Empezar recorrido"
                     leftIcon={<ArrowBigDown />}
-                    containerClass="!bg-red-400 flex-center gap-3 absolute hero-heading !right-2 md:w-64"
+                    containerClass="!bg-red-500 flex-center gap-3 absolute hero-heading !right-2 md:w-64"
+                    onClick={scrollDown}
                 />
                 P<b>A</b>STO
             </div>

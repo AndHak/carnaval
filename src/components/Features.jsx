@@ -133,7 +133,7 @@ const Features = () => {
     const timeLeft = useCountdown();
 
     return (
-        <section className="bg-black pb-52">
+        <section className="bg-black pb-52" id="educacion">
             <div className="container mx-auto px-3 md:px-10">
                 <div className="px-5 py-32">
                     <p className="font-circular-web text-lg text-blue-50">
