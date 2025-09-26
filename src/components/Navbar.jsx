@@ -89,7 +89,13 @@ const NavBar = () => {
                         {navItems.map((item, index) => {
                             const anchor = item.toLowerCase();
                             const isHome = location.pathname === "/";
-                            const href = isHome ? `#${anchor}` : `/#${anchor}`;
+
+                            let href;
+                            if (anchor === "mapa") {
+                                href = "/puntosdereciclaje";
+                            } else {
+                                href = isHome ? `#${anchor}` : `/#${anchor}`;
+                            }
 
                             return (
                                 <a
@@ -101,6 +107,7 @@ const NavBar = () => {
                                 </a>
                             );
                         })}
+
                         <button
                             onClick={toggleAudioIndicator}
                             className="ml-10 flex items-center space-x-0.5 mr-2"
@@ -148,15 +155,24 @@ const NavBar = () => {
                 {navItems.map((item, index) => {
                     const anchor = item.toLowerCase();
                     const isHome = location.pathname === "/";
-                    const href = isHome ? `#${anchor}` : `/#${anchor}`;
-                    return (<a
-                        key={index}
-                        href={href}
-                        onClick={() => setIsMenuOpen(false)}
-                        className="mb-4 text-lg hover:text-cyan-300"
-                    >
-                        {item}
-                    </a>);
+
+                    let href;
+                    if (anchor === "mapa") {
+                        href = "/puntosdereciclaje";
+                    } else {
+                        href = isHome ? `#${anchor}` : `/#${anchor}`;
+                    }
+
+                    return (
+                        <a
+                            key={index}
+                            href={href}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="mb-4 text-lg hover:text-cyan-300"
+                        >
+                            {item}
+                        </a>
+                    );
                 })}
 
                 <button

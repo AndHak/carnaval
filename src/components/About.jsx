@@ -12,7 +12,7 @@ const About = () => {
       scrollTrigger: {
         trigger: "#clip",
         start: "center center",
-        end: "+=500 center",
+        end: "+=1000 center",
         scrub: 0.5,
         pin: true,
         pinSpacing: true,

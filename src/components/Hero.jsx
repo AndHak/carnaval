@@ -106,8 +106,6 @@ const Hero = () => {
                                 onClick={handleMiniVdClick}
                                 className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
                             >
-
-                              
                                 <video
                                     ref={nextVdRef}
                                     src={getVideoSrc(
@@ -130,6 +128,8 @@ const Hero = () => {
                         src={getVideoSrc(currentIndex)}
                         loop
                         muted
+                        playsInline
+                        webkit-playsinline
                         id="next-video"
                         className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
                         onLoadedData={handleVideoLoad}
@@ -141,6 +141,8 @@ const Hero = () => {
                         autoPlay
                         loop
                         muted
+                        playsInline
+                        webkit-playsinline
                         className="absolute left-0 top-0 size-full object-cover object-center "
                         onLoadedData={handleVideoLoad}
                     />
