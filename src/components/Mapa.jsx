@@ -18,7 +18,7 @@ const Mapa = () => {
       className="w-full md:h-[900px] h-[400px] p-6 bg-green-400 shadow-2xl cursor-pointer justify-center items-center"
       onClick={() => navigate("/puntosdereciclaje")} 
     >
-        <h1 className="bento-title mt-4 mb-8 justify-center text-center">
+        <h1 className="bento-title mt-4 mb-8 sm:mt-20 justify-center text-center">
             Conoce nuestros puntos de reciclaje
         </h1>
       <MapContainer

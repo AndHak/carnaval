@@ -34,11 +34,11 @@ const Hero = () => {
 
         setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
     };
-
+    
     const scrollDown = () => {
         gsap.to(window, {
             duration: 1,
-            scrollTo: { y: window.scrollY + 1200 },
+            scrollTo: { y: "#about", offsetY: 200 },
             ease: "power2.inOut",
         });
     };
@@ -163,11 +163,16 @@ const Hero = () => {
                 <div className="absolute left-0 top-0 z-40 size-full">
                     <div className="mt-24 px-5 sm:px-10">
                         <h1 className="flex gap-0.5 special-font hero-heading text-yellow-500">
-                            <h1 className="text-emerald-500">Ec<b>o</b></h1>Car<b>n</b>aval
+                            <h1 className="text-emerald-500">
+                                Ec<b>o</b>
+                            </h1>
+                            Car<b>n</b>aval
                         </h1>
 
                         <p className="mb-5 bg-black/40 max-w-[14rem] size text-white p-2 font-robert-medium md:max-w-[30%] text-pretty text-md">
-                            Celebremos la cultura y la alegría de Pasto con un carnaval que respeta el medio ambiente y transforma el futuro.
+                            Celebremos la cultura y la alegría de Pasto con un
+                            carnaval que respeta el medio ambiente y transforma
+                            el futuro.
                         </p>
                     </div>
                 </div>
